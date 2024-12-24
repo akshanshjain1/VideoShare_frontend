@@ -1,0 +1,254 @@
+/* Parent Container */
+#likedvideo{
+    background-color: #fff;
+}
+#likedvideo .mycontent-container {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    border-radius: 1rem;
+    overflow-y: auto;
+  }
+  
+  /* Profile Section */
+  #likedvideo .profile-section {
+    background: #f0f0f0;
+    padding: 2px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 0; /* Remove margin-bottom to eliminate spacing */
+  }
+  
+  /* Profile Cover Image */
+  #likedvideo .profile-section .cover-image {
+    
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    
+
+  }
+  
+  /* Profile Details */
+  #likedvideo .profile-section .profile-details {
+    display: flex;
+    
+  }
+  
+  #likedvideo .profile-section .profile-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+    object-fit: cover;
+  }
+  
+  #likedvideo .profile-section .info h1 {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  #likedvideo .profile-section .info p {
+    margin: 5px 0;
+  }
+  
+  /* Videos Section */
+  #likedvideo .videos-section {
+    flex-grow: 1; /* Allow videos section to take remaining space */
+    overflow-y: auto; /* Enable scrolling when content exceeds */
+    padding: 20px;
+  }
+  
+  #likedvideo .video-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  #likedvideo .add-video-button {
+    background-color: #6c63ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  #likedvideo .add-video-button:hover {
+    background-color: #564fc4;
+  }
+  
+  /* Video List */
+  #likedvideo .videos-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-height: 400px;
+    overflow-y: auto;
+    margin-top: 20px;
+  }
+  
+  #likedvideo .video-item {
+    display: flex;
+    gap: 15px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  #likedvideo .video-item img {
+    width: 120px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  #likedvideo .video-details {
+    flex-grow: 1;
+  }
+  
+  #likedvideo .video-title {
+    font-weight: bold;
+    font-size: 16px;
+    margin: 0;
+  }
+  
+  #likedvideo .video-date,
+  .video-views {
+    font-size: 12px;
+    color: #555;
+    margin: 2px 0;
+  }
+  
+  /* Scrollbar Customization */
+  #likedvideo .mycontent-container::-webkit-scrollbar {
+    width:0;
+  }
+  #likedvideo .videos-list::-webkit-scrollbar {
+    width: 8px;
+   
+  }
+  
+  #likedvideo .videos-list::-webkit-scrollbar-thumb {
+    background-color: #6c63ff;
+    border-radius: 10px;
+    
+  }
+  
+  #likedvideo .videos-list::-webkit-scrollbar-track {
+    background-color: #9bc6d2;
+  }
+  
+/* Form Overlay */
+#likedvideo .form-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+/* Overall Container for the Add Video Form */
+/* Overall Container for the Add Video Form */
+#likedvideo .add-video-form {
+    background: white;
+    display: flex;
+    flex-direction: row; /* Set to row direction */
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 1000px;
+    width: 100%;
+    gap: 30px; /* Increased gap between sections */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow to make the form stand out */
+    overflow-y: auto;
+    max-height: 80vh;
+  }
+  
+  /* Left Section - Form Section */
+  #likedvideo .form-left,
+  #likedvideo .form-right {
+    flex: 1; /* Both sections take equal space */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Adjusted spacing between form elements */
+  }
+  
+  /* Styling Input and Textarea Fields */
+  #likedvideo .form-left input,
+  #likedvideo .form-left textarea,
+  #likedvideo .form-right input,
+  #likedvideo .form-right textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+  }
+  
+  /* Auto Generate Section Styling */
+  #likedvideo .form-right {
+    padding-left: 20px; /* Space between the form and Auto Generate */
+    border-left: 1px solid #ddd; /* Light divider line between form and AutoGenerate */
+  }
+  
+  #likedvideo .form-right input,
+  #likedvideo .form-right textarea {
+    width: 80%; /* Reduced width of input and textarea in Auto Generate section */
+    font-size: 14px;
+    margin-bottom: 15px; /* Adjusted margin for better spacing */
+  }
+  
+  /* Button Styling */
+  #likedvideo button {
+    background-color: #6c63ff;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+  
+  #likedvideo button:hover {
+    background-color: #564fc4;
+  }
+  
+  /* Close Form Button Styling */
+  #likedvideo .close-form {
+    background-color: #e0e0e0;
+    color: #333;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    border-radius: 10%;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #likedvideo .close-form:hover {
+    background-color: #d0d0d0;
+  }
+  
+  /* Styling Error Messages */
+  #likedvideo .error {
+    color: red;
+    font-size: 12px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+  }
+  

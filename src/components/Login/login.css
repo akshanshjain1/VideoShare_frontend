@@ -1,0 +1,91 @@
+/* Style for the form container */
+.form-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: "Arial", sans-serif;
+}
+
+/* Form heading */
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 24px;
+}
+
+/* Style for form groups */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Labels */
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #555;
+  font-weight: bold;
+}
+
+/* Inputs */
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+/* Input focus effect */
+.form-group input:focus {
+  border-color: #007bff;
+}
+
+/* Button styling */
+.submit-button {
+  width: 100%;
+  padding: 10px 15px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+/* Disabled button */
+.submit-button:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
+
+/* Error messages */
+.form-group input:invalid {
+  border-color: #dc3545;
+}
+
+.form-group input:invalid + span {
+  display: block;
+  color: #dc3545;
+  font-size: 12px;
+}
+
+/* Toast notification styling (optional, depends on library theme) */
+.react-hot-toast {
+  font-size: 14px;
+  font-family: "Arial", sans-serif;
+}

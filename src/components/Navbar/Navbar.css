@@ -1,0 +1,373 @@
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem; /* Remove vertical padding for consistent height */
+  height: 12%; /* Define a fixed height for the navbar */
+  background: #f09433;
+  background: -moz-linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  background: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  filter: progid: DXImageTransform.Microsoft.gradient(
+    startColorstr="#f09433",
+    endColorstr="#bc1888",
+    GradientType=1
+  );
+  color: white;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 10;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  flex-shrink: 1;
+  height: fit-content;
+}
+
+
+/* Logo Styling */
+.navbar__logo img {
+  height: auto;
+  max-height: 50px; /* Adjust this value based on how large you want the logo */
+  width: auto;
+  outline: none;
+}
+
+/* Search Styling */
+/* Ensure the container aligns properly */
+.navbar__search {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  height: 57%; 
+  width: 55%;
+  flex-shrink: 1;
+}
+
+/* Input styling for consistency */
+.navbar__search input {
+  min-height: 2.3rem;
+  max-height: 2.4rem;
+  height: 100%;
+  border: 1px solid #ccc;
+  border-radius: 0.3rem;
+  padding: 0 0.5rem;
+  font-size: 1rem;
+  flex-grow: 1;
+  outline: none;
+}
+.navbar__search input:hover{
+  border: 1.5px solid rgb(45, 45, 238);
+}
+.navbar__search input:focus{
+  border:1.5px solid rgb(45, 45, 238)
+}
+/* Profile button styling */
+.profile-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.3rem;
+  max-height: 2.4rem;
+  height: 100%; /* Match the height of the search bar */
+  border: 1px solid #ccc; /* Match the border style */
+  border-radius: 0.3rem;
+  background-color: whitesmoke;
+  cursor: pointer;
+  flex-shrink: 1;
+  width: auto;
+  margin: 0;
+  outline: none;
+  
+}
+.profile-button :focus{
+  outline: none;
+  border: 1.5px solid rgb(45, 45, 238);
+}
+.profile-button:hover{
+  outline: none;
+}
+.profile-button::after{
+  outline: none;
+}
+
+/* Inner content alignment */
+.profile-button-content {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* Icon styling */
+.profile-icon {
+  font-size: 1.5rem;
+  color: gray;
+}
+
+/* Text styling */
+.profile-text {
+  font-size: 0.8rem;
+  color: #333;
+  line-height: 1.1;
+  text-align: left;
+}
+
+
+
+
+/* Authentication Button Styling */
+.navbar__auth {
+  display: flex;
+  flex-direction: row;
+  gap: 0rem;
+  flex-shrink: 1;
+  
+}
+
+.auth-button {
+  padding:  1rem 1.1rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  color: #080707;
+  /* background-color: #f5f5f5; */
+  /* border: 1px solid #ffffff; */
+  background-color: transparent;
+  box-sizing: border-box;
+  outline: none;
+  flex-shrink: 1;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 26%; /* Adjust this width as per container's width */
+  height: 25%; /* Takes 25% of the container's height */
+  margin-left: 1rem;
+}
+
+/* Hide the default checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .3s;
+  border-radius: 25px;
+  height: 100%; /* Takes full height of .switch */
+  width: 100%; /* Takes full width of .switch */
+}
+
+/* Slider knob */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 70%; /* Proportional height for the toggle knob */
+  width: 15px; /* Adjust knob size proportionally */
+  left: 5%;
+  bottom: 15%;
+  background-color: white;
+  transition: .3s;
+  border-radius: 20rem;
+}
+
+input:checked + .slider {
+  background-color: #0c24da;
+}
+
+input:checked + .slider:before {
+  transform: translateX(calc(165%)); /* Adjusted for knob movement */
+}
+/* Sidebar Styling */
+.sidebar {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  width: 220px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  opacity: 0;
+  transform: scale(0.95);
+  z-index: 1000;
+  padding: 15px 0;
+  display: none;
+}
+
+.sidebar.open {
+  display: block;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  padding: 10px 20px;
+  cursor: pointer;
+  color: #333;
+  font-size: 14px;
+  transition: 0.2s ease, color 0.2s ease;
+}
+
+.sidebar ul li:hover {
+  background-color: #f0f0f0;
+  color: #0073e6;
+}
+
+/* Form Overlay Styling */
+.form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+}
+
+.form-content {
+  background: #ffffff;
+  padding: 20px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  width: 300px;
+  text-align: center;
+}
+
+.form-content h3 {
+  margin-bottom: 15px;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.form-content form input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.form-content form button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 1em;
+  border: none;
+  border-radius: 4px;
+  background-color: #0073e6;
+  color: white;
+}
+
+.form-content form button[type="button"] {
+  background-color: #ccc;
+  margin-left: 10px;
+}
+
+.profile-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cover-image {
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
+.profile-details {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  top: -50px;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 4px solid white;
+  margin-right: 20px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.full-name {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.username {
+  font-size: 18px;
+  color: gray;
+}
+.notification-button {
+  background: none;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  padding: 15px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+/* Effect when button is clicked (scaled and with background color change) */
+.notification-button.clicked {
+  background-color: rgba(255, 255, 255, 0.5); /* Slight white background */
+  transform: scale(0.9); /* Shrink the button slightly on click */
+  outline: none;
+}
+
+/* Optional: For a hover effect */
+.notification-button:hover {
+  background-color: rgba(241, 240, 240, 0.592); /* Light background on hover */
+  outline: none;
+}
+.manage-channel:hover{
+  background-color: white;
+}

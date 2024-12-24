@@ -1,0 +1,109 @@
+/* Container styling */
+.plus-menu-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  z-index: 1000;
+  padding: 0%;
+  outline: none;
+}
+
+/* Menu options styling */
+.menu-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #0c24da; /* Blue background for the tile */
+  border-radius: 20px;
+  padding: 10px;
+  animation: emergeFromPlus 0.4s ease-in-out;
+}
+
+.menu-button {
+  background: -moz-linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  background: linear-gradient(45deg, #f09433 0%, #db1f7a 25%, #bc1888 100%);
+  color: white;
+
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px #0c24da;
+  border-width: 3px;
+  border-color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: box-shadow 0.8s;
+}
+
+.menu-button:hover {
+  box-shadow: 0 6px 8px #0c24da;
+  border-width: 3px;
+  border-color: rgb(23, 231, 30);
+}
+
+/* Plus button styling */
+.plus-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 55px;
+  height: 55px;
+  background: white; /* Blue gradient */
+  border-color: #0c24da;
+  border-width: 2px;
+  border-radius: 25%;
+  box-shadow: 0 4px 6px #0c24da;
+  cursor: pointer;
+  outline: none;
+  /* Remove transform and any movement */
+}
+
+.plus-icon {
+  font-size: 2rem;
+  color: #830640;
+  outline: none;
+}
+
+/* Animation for the menu appearing */
+
+@keyframes emergeFromPlus {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.temp-show {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 2px;
+  gap: 3px;
+  background-color: white;
+  font-size: smaller;
+  border-radius: 10px;
+  border-color: #0c24da;
+  width: 100%;
+}

@@ -1,0 +1,284 @@
+/* Ensure the body and html take full height
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  background: #f09433;
+  background: -moz-linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  background: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+} */
+
+/* Main container */
+
+.profile-page {
+  width: 100vw;
+  margin:  0;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ ; /* Enable vertical scrolling */
+  max-height: 100vh; /* Ensure it fits within the viewport height */
+  padding-right: 10px; /* Give space for scrollbar */
+  height: 100%;
+  overflow-y: scroll;
+  display: flexbox;
+  flex-direction: column;
+  
+  gap: 0;
+}
+
+/* Cover Section with contrasting tile */
+.cover-section {
+  background-color: #6c63ff; /* Contrasting color for the tile */
+  color: #fff;
+  padding: 2rem;
+  position: relative;
+  text-align: center;
+  border-radius: 1.2rem;
+  overflow: hidden;
+}
+
+.cover-section img {
+  width: auto;
+  height: 20%;
+  object-fit: cover;
+ 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Profile Details Section */
+.profile-details {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.profile-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  margin-right: 20px;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.info {
+  flex-grow: 1;
+}
+
+.info h1 {
+  margin: 0;
+  font-size: 22px;
+  color: #222;
+}
+
+.info p {
+  margin: 5px 0;
+  color: #555;
+  font-size: 14px;
+}
+
+.info p strong {
+  color: #000;
+}
+
+/* Subscribe Button */
+.subscribe-button {
+  margin-left: auto;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.subscribe-button.not-subscribed {
+  background-color: #6c63ff;
+  color: white;
+}
+
+.subscribe-button.not-subscribed:hover {
+  background-color: #564fc4;
+}
+
+.subscribe-button.subscribed {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.subscribe-button.subscribed:hover {
+  background-color: #cccccc;
+}
+
+/* Videos Section */
+.videos-section {
+  background-color: #f9f9f9;
+  padding-bottom: 20px;
+}
+
+.videos-section h3 {
+  font-size: 1.2rem;
+  color: #333;
+  text-align: center;
+  
+}
+
+/* Scrollable container for videos */
+.videos-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  flex-wrap: wrap;
+ justify-content: center;
+  overflow-x: hidden; /* Re-enable horizontal scrolling */
+  padding: 5px;
+   /* Track and thumb colors */
+}
+
+/* Style the scrollbar for Webkit-based browsers */
+
+
+/* Video card styling */
+#userprofile .video-card {
+  
+  width: 20%;
+  
+   /* Adjusted to a better size for readability */
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#userprofile .video-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+#userprofile .video-card img {
+
+  width: 100%;
+  aspect-ratio: 16/9; /* Set height to a fixed value */
+  object-fit: cover; /* Ensures the thumbnail covers the area */
+}
+
+#userprofile .video-card p {
+  padding: 0.3rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #333;
+  text-align: left;
+  margin: 0.15rem;
+  
+}
+
+#userprofile .video-card p:hover {
+  color: #000000;
+}
+#userprofile .comment-item {
+  margin-bottom: 0.6rem;
+  margin-left: 2rem;
+  margin-left: 2rem;
+  border: 1px solid #474141;
+  border-radius: 1rem;
+  gap: 0.1rem;
+  padding: 0.8rem;
+}
+
+#userprofile .comment-item p {
+  font-size: 0.9rem;
+  color: #333;
+}
+#userprofile .like-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  color: #f5f5f5;
+  border: 2rem;
+  border-color: #1c0d0d;
+  border-radius: 2rem;
+  padding: 0.3rem 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  position: relative;
+  outline: none;
+}
+
+#userprofile .like-button:hover {
+  background-color: #717578;
+  transform: scale(1.05);
+}
+
+#userprofile .like-button:active {
+  transform: scale(0.95);
+}
+
+#userprofile .like-icon {
+  border-color: #1c0d0d;
+  font-size: 1.4rem;
+  transition: transform 0.3s ease;
+}
+
+#userprofile .liked .like-icon {
+  color: #d80d0d;
+  transform: scale(1.3);
+}
+
+#userprofile .like-count {
+  padding-left: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: black;
+}
+
+/* Custom scrollbar for profile page */
+.profile-page::-webkit-scrollbar {
+  width: 8px;
+  background-color: transparent;
+}
+
+.profile-page::-webkit-scrollbar-thumb {
+  background: #6c63ff;
+  border-radius: 8px;
+  border: 2px solid #fff; /* Border to separate thumb from track */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.profile-page::-webkit-scrollbar-track {
+  background-color: #f4f4f4;
+  border-radius: 8px;
+}

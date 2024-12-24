@@ -1,0 +1,28 @@
+.hero-section__content .form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f1efef;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+}
+
+
+.hero-section__content .add-video-form {
+  background-color: #f6f1f1;
+  display: flex;
+  flex-direction: column; 
+  padding-right: 1rem;
+  padding-left: 0.7rem;
+  border-radius: 12px;
+  max-width: 1000px;
+  width: max-content;
+  
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow to make the form stand out */
+  overflow-y: auto;
+  max-height: 80vh;
+}

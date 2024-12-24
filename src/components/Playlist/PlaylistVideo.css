@@ -1,0 +1,186 @@
+/* General Container Styling */
+ .playlist-video-container {
+  display: flex;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  background-color: #fff;
+  overflow: hidden;
+}
+
+/* Left Part (Playlist Details) */
+#PlaylistVideo .left-part {
+  border-radius: 2.3rem;
+  color: #000;
+  width: 30%; /* Fixed width */
+  background-color: #210cadaa;
+  border-right: 1px solid #ddd;
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
+  height: 96.5%;
+  box-sizing: border-box;
+  position: fixed; /* Fixed to the left */
+   
+  overflow-y: auto;
+  margin-bottom: 0.5rem; 
+}
+
+#PlaylistVideo .playlist-info {
+  text-align: center;
+  color: #000;
+}
+
+#PlaylistVideo .playlist-thumbnail {
+  margin-top: 1.3rem;
+  width: 90%;
+  border-radius: 0.8rem;
+  
+}
+
+#PlaylistVideo .playlist-title {
+  font-size: 1.8rem;
+  margin: 10px 0;
+  font-weight: bold;
+  color: #000;
+}
+
+#PlaylistVideo .playlist-owner {
+  font-size: 1rem;
+  color: #100f0f;
+  margin-top: 5px;
+}
+
+#PlaylistVideo .playlist-description {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #0e0b0b;
+  line-height: 1.4;
+}
+
+/* Right Part (Video List) */
+#PlaylistVideo .video-part {
+  margin-top: 0.7rem;
+  margin-left: 31%; /* Offset to the right of the fixed left part */
+  flex: 1;
+  overflow-y: auto; /* Scrollable content */
+  padding: 1rem;
+  box-sizing: border-box;
+  border-left:1px solid rgba(76, 73, 73, 0.597)
+}
+
+#PlaylistVideo .video-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+ 
+}
+
+#PlaylistVideo .video-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 1rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid #5d5a5aaf;
+  position: relative;
+}
+
+/* Video Thumbnail and Overlay */
+#PlaylistVideo .video-thumbnail-container {
+  position: relative;
+  width: 16rem;
+  height: auto;
+  flex-shrink: 1;
+}
+
+#PlaylistVideo .video-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+#PlaylistVideo .video-duration-overlay {
+  position: absolute;
+  bottom: 0.8rem;
+  right: 1.2rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
+/* Video Details */
+#PlaylistVideo .video-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#PlaylistVideo .video-title {
+  font-size: 1rem;
+  margin: 0;
+  font-weight: bold;
+  color: #000;
+}
+
+#PlaylistVideo .video-meta {
+  font-size: 0.85rem;
+  color: #555;
+  margin-top: 5px;
+}
+
+/* Options Button and Menu */
+#PlaylistVideo .video-options {
+  position: relative;
+  flex-shrink: 0;
+}
+
+#PlaylistVideo .options-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #555;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 2rem;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+  outline: none;
+}
+
+#PlaylistVideo .options-button:hover {
+  background-color: #d8d7d7;
+  border-radius: 50%;
+  outline: none;
+}
+
+#PlaylistVideo .options-menu {
+  position: absolute;
+  top: 35px;
+  right: 0;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 10;
+}
+
+#PlaylistVideo .delete-option {
+  background: none;
+  border: none;
+  padding: 10px 15px;
+  font-size: 0.9rem;
+  color: rgb(255, 0, 0);
+  cursor: pointer;
+  text-align: left;
+  width: fit-content;
+}
+
+#PlaylistVideo .delete-option:hover {
+  background-color: #f9f9f9;
+}

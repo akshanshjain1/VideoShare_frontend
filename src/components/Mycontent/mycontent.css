@@ -1,0 +1,313 @@
+/* Parent Container */
+#content .mycontent-container {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 95vw;
+    padding: 20px;
+    overflow-y: auto;
+  }
+  #content .profile-section {
+    background: #f0f0f0;
+    padding: 2px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 0; /* Remove margin-bottom to eliminate spacing */
+  }
+  /* Profile Section */
+  #content .profile-section .cover-image {
+    
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    
+
+  }
+  
+  /* Profile Details */
+  #content .profile-section .profile-details {
+    display: flex;
+    
+  }
+  
+  /* Profile Details */
+  
+  
+  #content .profile-section .profile-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+    object-fit: cover;
+  }
+  
+  #content .profile-section .info h1 {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  #content .profile-section .info p {
+    margin: 5px 0;
+  }
+  
+  /* Videos Section */
+  #content .videos-section {
+    flex-grow: 1; /* Allow videos section to take remaining space */
+    overflow-y: auto; /* Enable scrolling when content exceeds */
+    padding: 20px;
+  }
+  
+  #content .video-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  #content .add-video-button {
+    background-color: #6c63ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  #content .add-video-button:hover {
+    background-color: #564fc4;
+  }
+  
+  /* Video List */
+  #content .videos-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-height: 400px;
+    overflow-y: auto;
+    margin-top: 20px;
+  }
+  
+  #content .video-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 15px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  #content .video-item img {
+    width: 12rem;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  #content .video-details {
+    flex-grow: 1;
+  }
+  
+  #content .video-title {
+    font-weight: bold;
+    font-size: 16px;
+    margin: 0;
+  }
+  
+  #content .video-date,
+  .video-views {
+    font-size: 12px;
+    color: #555;
+    margin: 2px 0;
+  }
+  
+  /* Scrollbar Customization */
+  #content .mycontent-container::-webkit-scrollbar {
+    width:0;
+  }
+  #content .videos-list::-webkit-scrollbar {
+    width: 8px;
+   
+  }
+  
+  #content .videos-list::-webkit-scrollbar-thumb {
+    background-color: #6c63ff;
+    border-radius: 10px;
+    
+  }
+  
+  #content .videos-list::-webkit-scrollbar-track {
+    background-color: #9bc6d2;
+  }
+  
+/* Form Overlay */
+#content .form-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+/* Overall Container for the Add Video Form */
+/* Overall Container for the Add Video Form */
+#content .add-video-form {
+    background: white;
+    display: flex;
+    flex-direction: row; /* Set to row direction */
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 1000px;
+    width: 100%;
+    gap: 30px; /* Increased gap between sections */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow to make the form stand out */
+    overflow-y: auto;
+    max-height: 80vh;
+  }
+  
+  /* Left Section - Form Section */
+  #content .form-left,
+  #content .form-right {
+    flex: 1; /* Both sections take equal space */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Adjusted spacing between form elements */
+  }
+  
+  /* Styling Input and Textarea Fields */
+  #content .form-left input,
+  #content .form-left textarea,
+  #content .form-right input,
+  #content .form-right textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+  }
+  
+  /* Auto Generate Section Styling */
+  #content .form-right {
+    padding-left: 20px; /* Space between the form and Auto Generate */
+    border-left: 1px solid #ddd; /* Light divider line between form and AutoGenerate */
+  }
+  
+  #content .form-right input,
+  #content .form-right textarea {
+    width: 80%; /* Reduced width of input and textarea in Auto Generate section */
+    font-size: 14px;
+    margin-bottom: 15px; /* Adjusted margin for better spacing */
+  }
+  
+  /* Button Styling */
+  #content button {
+    background-color: #6c63ff;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+  
+  #content button:hover {
+    background-color: #564fc4;
+  }
+  
+  /* Close Form Button Styling */
+  #content .close-form {
+    background-color: #e0e0e0;
+    color: #333;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    border-radius: 10%;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #content .close-form:hover {
+    background-color: #d0d0d0;
+  }
+  
+  /* Styling Error Messages */
+  #content .error {
+    color: red;
+    font-size: 12px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+  }
+  #content .video-options {
+    position: relative;
+    flex-shrink: 0;
+    align-items: end;
+    outline: none;
+  }
+ #content .options-button {
+ 
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #555;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 2rem;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+    outline: none;
+  }
+ #content .options-button:hover {
+    background-color: #d8d7d7;
+    border-radius: 50%;
+    outline: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  
+ #content .options-menu {
+    position: absolute;
+    top: 2.5rem;
+   
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 10;
+    outline: none;
+  }
+  
+ #content .delete-option {
+    background: none;
+    border: none;
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    text-align: left;
+    width: fit-content;
+    outline: none;
+  }
+  
+ #content .delete-option:hover {
+    background-color: #f9f9f9;
+  }
+  
