@@ -28,7 +28,7 @@ function UploadVideo({setShowForm ,setVideos}){
       formdata.append('thumbnail',data.thumbnail[0])
       
       try {
-       const response= await axios.post('/api/v1/videos/',formdata)
+       const response= await axios.post('/api/v1/videos',formdata)
        setVideos((prev)=>[response.data.data,...prev])
        setvideodetails(response.data.data)
        setisvideouploaded(true);
