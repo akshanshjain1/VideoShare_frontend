@@ -86,14 +86,16 @@ function Video() {
   };
   const handleliketoggle = async () => {
     try {
-      await axios.post(`/api/v1/likes/toggle/v/${videoId}`);
+      const response=await axios.post(`/api/v1/likes/toggle/v/${videoId}`);
+      toast.success(response.data.message)
     } catch (error) {
       toast.error("Liking fail");
     }
   };
   const handlecommentlike = async ({ commentID }) => {
     try {
-      await axios.post(`/api/v1/likes/toggle/c/${commentID}`);
+     const response= await axios.post(`/api/v1/likes/toggle/c/${commentID}`);
+     toast.success(response.data.message)
     } catch (error) {
       toast.error("Liking fail");
     }
@@ -313,7 +315,7 @@ function Video() {
                 </div>
 
                 <button
-                  className={`like-button ${isliked ? "liked" : ""}`}
+                  className={`like-button ${comment.islikedbyuser ? "liked" : ""}`}
                   onClick={() => {
                     if (isauthenticated) {
                       handlecommentlike({ commentID: comment._id });

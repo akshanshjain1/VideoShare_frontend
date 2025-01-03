@@ -1,10 +1,13 @@
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { toast } from "react-hot-toast";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./signup.css";
-export default function Signup() {
+
+ function Signup() {
+  const BASEURL=import.meta.env.VITE_BACKEND_URL
+console.log(BASEURL)
   const [issubmitting, setissubmitting] = useState(false);
   const navigate = useNavigate();
   const {
@@ -21,10 +24,13 @@ export default function Signup() {
     formData.append("password", data.password);
     formData.append("username", data.username);
     formData.append("avatar", data.avatar[0]);
-    formData.append("coverimage", data?.coverImage[0]);
-
+    if (data.coverImage && data.coverImage[0]) {
+      formData.append("coverimage", data.coverImage[0]);
+    }
+   
     try {
-      const response = await axios.post("/api/v1/users/register", formData);
+      const response = await axios.post(`/api/v1/users/registernewuser`,formData);
+      
       toast.success(response.data.message);
       setTimeout(() => navigate("/login"), 500);
     } catch (error) {
@@ -39,7 +45,9 @@ export default function Signup() {
       setissubmitting(false);
     }
   };
-
+  useEffect(()=>{
+    console.log(BASEURL)
+  })
   return (
     <div className="form-container">
       <h2>Sign Up</h2>
@@ -113,5 +121,6 @@ export default function Signup() {
       </div>
     </div>
   );
-  36;
+
 }
+export default Signup

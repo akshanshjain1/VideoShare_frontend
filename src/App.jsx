@@ -7,6 +7,7 @@ import { ErrorBoundary } from "react-error-boundary";
 import ErrorFallback from "./components/ErrorBoundary.jsx";
 import { CircularProgress } from "@mui/material";
 
+
 const HeroSection = lazy(() => import("./components/HeroSection/HeroSection.jsx"));
 const Signup = lazy(() => import("./components/Signup/signup.jsx"));
 const Login = lazy(() => import("./components/Login/login.jsx"));
@@ -30,22 +31,23 @@ const Notification = lazy(() => import("./components/Notification/notification.j
 const Dashboard = lazy(() => import("./components/Dashboard/dashboard.jsx"));
 
 const router = createBrowserRouter([
-  {
-    path: "/signup",
-    element: (
-      <ErrorBoundary FallbackComponent={ErrorFallback} onReset={() => window.location.reload()}>
-        <Suspense fallback={<div><CircularProgress color="primary" /></div>}>
-          <Signup />
-        </Suspense>
-      </ErrorBoundary>
-    ),
-  },
+  
   {
     path: "/login",
     element: (
       <ErrorBoundary FallbackComponent={ErrorFallback} onReset={() => window.location.reload()}>
         <Suspense fallback={<div><CircularProgress color="primary" /></div>}>
           <Login />
+        </Suspense>
+      </ErrorBoundary>
+    ),
+  },
+  {
+    path: "/signup",
+    element: (
+      <ErrorBoundary FallbackComponent={ErrorFallback} onReset={() => window.location.reload()}>
+        <Suspense fallback={<div><CircularProgress color="primary" /></div>}>
+          <Signup />
         </Suspense>
       </ErrorBoundary>
     ),

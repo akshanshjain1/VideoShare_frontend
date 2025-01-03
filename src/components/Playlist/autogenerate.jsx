@@ -9,7 +9,7 @@ const AutoGenerate = () => {
   const handleSubmit = async () => {
     setGenerating(true);
     try {
-      const res = await axios.get(`/api/v1/videos/generatetext?query=${query}`);
+      const res = await axios.post(`/api/v1/videos/generatetext?query=${query}`);
       setTitleDescription(res.data.data);
       
     } catch (error) {

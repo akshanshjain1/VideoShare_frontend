@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import AutoGenerate from "./autogenerate";
 import toast from "react-hot-toast";
@@ -6,7 +6,8 @@ import axios from "axios";
 
 function ChangeThumbnail({ setShowForm,method,playlistid ,setmethod}) {
   const [making, setismaking] = useState(false);
-
+  
+  
   const {
     register,
     handleSubmit,
@@ -16,14 +17,17 @@ function ChangeThumbnail({ setShowForm,method,playlistid ,setmethod}) {
   } = useForm();
 
   const autoGenerate = watch("autoGenerate");
-  const onSubmit = async (data) => {
+  const onSubmit = async (data) => {  
+    
     setismaking(true);
     const formdata=new FormData()
-    formdata.append('thumbnail',data.thumbnail[0])
+    formdata.append("thumbnail",data.thumbnail[0])
    
       try {
-      
-        await axios.patch(`/api/v1/playlist/addthumbnail/${playlistid}`, formdata);
+        
+        //await axios.patch(`/api/v1/playlist/addthumbnail/${playlistid}`, formdata);
+        
+        await axios.patch(`/api/v1/playlist/updatethumbnail/${playlistid}`,formdata);
         toast.success("Playlist Updated Successfully");
       } catch (error) {
         if (error.response) {
@@ -47,8 +51,8 @@ function ChangeThumbnail({ setShowForm,method,playlistid ,setmethod}) {
           <div className="form-left" >
             <label>Select Thumbnail</label>
             
-            <input type="file" accept="image/*" {...register('thumbnail')} 
-            required
+            <input type="file" accept="image/*" {...register("thumbnail", { required: 'thumbnail is required' })} 
+            
             style={{width:'90%'}} />
             <button type="submit">
               {making ?  method==='update'?"Updating Playlist":"Creating Playlist" : method==='update'?"Update Playlist":"Create Playlist"}

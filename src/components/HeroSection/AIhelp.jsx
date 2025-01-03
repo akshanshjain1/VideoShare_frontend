@@ -12,7 +12,7 @@ function AIhelp() {
     setGenerating(true);
     try {
       if (generatedText.length > 3000)
-        setGenerating((prev) => prev.slice(-3000));
+        setgeneratedtext((prev) => prev.slice(-3000));
       const res = await axios.post(
         `/api/v1/users/generatetext?query=${query}`,
         { prevconversation: generatedText }

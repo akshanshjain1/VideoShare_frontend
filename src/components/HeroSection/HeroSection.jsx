@@ -24,7 +24,7 @@ const fetchTrendingVideos = async ({ videos, setVideos }) => {
       lang: "en",
     },
     headers: {
-      "x-rapidapi-key": import.meta.env.VITE_VIDEO_DETAIL_FETCHIING_API,
+      "x-rapidapi-key": "86bd841dbfmsheb65cfbd893a32dp1cef31jsn52d4e5f6440f",
       "x-rapidapi-host": "yt-api.p.rapidapi.com",
     },
   };

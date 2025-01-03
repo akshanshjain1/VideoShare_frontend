@@ -131,6 +131,7 @@ function Playlist() {
                             onClick={() => {
                               setmethod("update");
                               setshowThumbnailChangeForm(true);
+                              setplaylistIDforAddorUpdate(playlist._id)
                             }}
                           >
                             <div
@@ -150,7 +151,7 @@ function Playlist() {
                               setShowForm(true);
                               setmethod("update"),
                                 setplaylistIDforAddorUpdate(
-                                  (prev) => playlist._id
+                                  playlist._id
                                 );
                             }}
                           >
