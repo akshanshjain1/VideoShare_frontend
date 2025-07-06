@@ -80,6 +80,7 @@ const HeroSectionSearch = () => {
   const [showForm, setShowForm] = useState(false);
   const [videoId, setVideoId] = useState("");
   const [showOptions, setShowOptions] = useState("");
+  const [resultLoaded,setresultLoaded]=useState(false);
   useEffect(() => {
     const loadVideos = async () => {
       setIsLoading(true); // Set loading to true before fetching
@@ -87,10 +88,62 @@ const HeroSectionSearch = () => {
       else await fetchVideolocal({ query, videos, setVideos, page, sortBy });
 
       setIsLoading(false); // Stop loading after videos are fetched
+      setresultLoaded(true);
     };
 
     loadVideos();
   }, [query, mode, searchParams, sortBy]);
+  
+  useEffect(() => {
+  if (mode || isloading || !query) return;
+  let hasClicked = false;
+  let trackingTimeout;
+
+  // Function to send tracking event
+  const trackUnwatched = async () => {
+    try {
+      if (
+         !hasClicked &&
+         resultLoaded &&
+        Array.isArray(videos) &&
+        videos.length === 0
+      ) {
+        await axios.post(
+          `/api/v1/topic-suggestion/track`,
+          { title: query },
+          
+        );
+      }
+    } catch (err) {
+      console.error("Failed to track unwatched topic:", err.message);
+    }
+  };
+
+  // Wait a few seconds to give user time to click
+  trackingTimeout = setTimeout(() => {
+    trackUnwatched();
+  }, 10000); // 10 sec
+
+  // Detect if user actually clicked a video (any link click)
+  const handleClick = (e) => {
+    if (e.target.closest("a")) hasClicked = true;
+  };
+
+  // Also track before leaving page (safety)
+  const handleUnload = () => {
+    if (!hasClicked) trackUnwatched();
+  };
+
+  window.addEventListener("click", handleClick);
+  window.addEventListener("beforeunload", handleUnload);
+
+  return () => {
+    clearTimeout(trackingTimeout);
+    window.removeEventListener("click", handleClick);
+    window.removeEventListener("beforeunload", handleUnload);
+  };
+}, [videos, query, mode,resultLoaded]);
+
 
   return (
     <div id="mainpage">

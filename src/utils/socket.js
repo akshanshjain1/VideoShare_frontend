@@ -8,7 +8,7 @@ const socket = io("https://videoshare-zq3u.onrender.com", {
   
   
   socket.on("connect", () => {
-    
+    console.log('socket connected')
     
   });
   const setUser = (userId) => {

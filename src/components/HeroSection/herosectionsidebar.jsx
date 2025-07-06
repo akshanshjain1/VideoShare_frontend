@@ -7,6 +7,7 @@ import {
   FaList,
   FaUserFriends,
   FaUsers,
+  FaFastForward
 } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
@@ -57,6 +58,14 @@ function HerosectionSidebar() {
         }
       >
         <FaUsers />
+      </button>
+      <button
+        onClick={() =>
+          navigate(isauthenticated ? "/topic-suggestion" : `/login?returnurl=/topic-suggestion
+            `)
+        }
+      >
+        <FaFastForward/>
       </button>
     </div>
     </div>

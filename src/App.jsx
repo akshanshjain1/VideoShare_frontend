@@ -29,7 +29,7 @@ const PlaylistVideo = lazy(() => import("./components/Playlist/PlaylistVideo.jsx
 const OtherUserPlaylistVideo = lazy(() => import("./components/Playlist/otherUserPlaylistVideo.jsx"));
 const Notification = lazy(() => import("./components/Notification/notification.jsx"));
 const Dashboard = lazy(() => import("./components/Dashboard/dashboard.jsx"));
-
+const TopicSuggestion = lazy(() => import("./components/TopicSuggestion/topic-suggestion.jsx"));
 const router = createBrowserRouter([
   
   {
@@ -218,6 +218,16 @@ const router = createBrowserRouter([
       <ErrorBoundary FallbackComponent={ErrorFallback} onReset={() => window.location.reload()}>
         <Suspense fallback={<div><CircularProgress color="primary" /></div>}>
           <Dashboard />
+        </Suspense>
+      </ErrorBoundary>
+    ),
+  },
+  {
+    path: "/topic-suggestion",
+    element: (
+      <ErrorBoundary FallbackComponent={ErrorFallback} onReset={() => window.location.reload()}>
+        <Suspense fallback={<div><CircularProgress color="primary" /></div>}>
+          <TopicSuggestion />
         </Suspense>
       </ErrorBoundary>
     ),
